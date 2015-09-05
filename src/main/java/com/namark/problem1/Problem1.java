@@ -11,19 +11,19 @@ package com.namark.problem1;
  */
 public class Problem1 {
 
-    public int sumMultiplesInUpperLimit(int[] divisors, int upperLimit) {
+    public int sumMultiplesInUpperLimit(int[] numbers, int upperLimit) {
         int result = 0;
-        for (int divisor : divisors) {
-            result += sumMultipleInUpperLimit(divisor, upperLimit);
+        for (int number : numbers) {
+            result += sumMultipleInUpperLimit(number, upperLimit);
         }
         return result;
     }
 
-    private int sumMultipleInUpperLimit(int divisor, int upperLimit) {
+    private int sumMultipleInUpperLimit(int number, int upperLimit) {
         int result = 0;
-        int iterations = (upperLimit - 1) / divisor;
+        int iterations = (upperLimit - 1) / number;
         for (int i = 1; i <= iterations; i++) {
-            result += i * divisor;
+            result += i * number;
         }
         return result;
     }
