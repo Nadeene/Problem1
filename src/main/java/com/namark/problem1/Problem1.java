@@ -13,9 +13,12 @@ public class Problem1 {
 
     public int sumMultiplesInUpperLimit(int[] numbers, int upperLimit) {
         int result = 0;
+        int multiplied = 1;
         for (int number : numbers) {
             result += sumMultipleInUpperLimit(number, upperLimit);
+            multiplied *= number;
         }
+        result -= sumMultipleInUpperLimit(multiplied, upperLimit);
         return result;
     }
 
