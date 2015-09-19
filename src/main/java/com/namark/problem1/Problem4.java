@@ -5,9 +5,6 @@
  */
 package com.namark.problem1;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  *
  * @author Natalia
@@ -19,11 +16,17 @@ public class Problem4 {
         int upperLimit = calcUpperLimit(digit);
         int lowerLimit = calcLowerLimit(digit);
         int tempI = 0, tempJ = 0;
+        int j;
         for (int i = upperLimit; i >= lowerLimit; i--) {
-            for (int j = upperLimit; j >= i; j--) {  
+            for (j = upperLimit; j >= i; j--) {
                 if (isPalindromicProduct(i * j)) {
                     System.out.println("a: " + i + " b: " + j + " wynik: " + i * j + "to palindrom?: " + isPalindromicProduct(i * j));
                     max = Math.max(i * j, max);
+                    if (max == i * j) {
+                        tempI = i;
+                        tempJ = j;
+                        break;
+                    }
                 }
             }
         }
